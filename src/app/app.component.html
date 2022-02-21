@@ -1,132 +1,220 @@
-
-
-
 <div class="container">
-
-
-
-
-
-  <div class="input-group" style="padding-top: 50px; padding-bottom: 50px;">
-    <input type="text" class="form-control" placeholder="search by employee name, email or company " aria-label="Recipient's username" aria-describedby="button-addon2">
+  <div class="input-group" style="padding-top: 50px; padding-bottom: 50px">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="search by employee name, email or company "
+      aria-label="Recipient's username"
+      aria-describedby="button-addon2"
+    />
     <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-      <span class="iconify" data-icon="bytesize:search" style="color: green;"></span>
+      <span
+        class="iconify"
+        data-icon="bytesize:search"
+        style="color: green"
+      ></span>
     </button>
   </div>
 
-  <div class="alert alert-warning alert-dismissible fade show p-3" role="alert"  style=" margin-top: 1px; text-align: center;">
-    Employee  Removed !
-     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-   </div>
+  <div
+    class="alert alert-warning alert-dismissible fade show p-3"
+    role="alert"
+    style="margin-top: 1px; text-align: center"
+  >
+    Employee Removed !
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
 
-  
   <!-- Modal -->
   <form [formGroup]="employeeForm" (ngSubmit)="addEmployee()">
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add Employee</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-       
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Employee</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">name </label>
-              <input formControlName="name"  id="name" type="text" class="form-control"  aria-describedby="emailHelp" required>
- </div>
- <div class="mb-3">
-  <label for="exampleInputEmail1" class="form-label">email </label>
-  <input type="email" formControlName="email"  id="email"  class="form-control"  aria-describedby="emailHelp">
-</div>
-<div class="mb-3">
-  <label for="exampleInputEmail1" class="form-label">gender </label>
-  <select class="form-select"  formControlName="gender"  id="gender" aria-label="Default select example">
-    <option selected>Open this select menu</option>
-    <option value="true">male</option>
-    <option value="false">female</option>
-  </select>
-
-</div>
-<div class="mb-3">
-  <label for="exampleInputEmail1" class="form-label">mobile</label>
-  <input type="text"formControlName="mobile"  id="mobile" class="form-control"  aria-describedby="emailHelp">
-</div>
-<div class="mb-3">
-  <label for="exampleInputEmail1" class="form-label">address</label>
-  <input type="text" formControlName="address"  id="address" class="form-control"   aria-describedby="emailHelp">
-</div>
-<div class="mb-3">
-  <label for="exampleInputEmail1" class="form-label">company</label>
-  <input type="text" formControlName="company"  id="company"  class="form-control"   aria-describedby="emailHelp">
-</div>
-<div class="mb-3">
-  <label for="exampleInputEmail1" class="form-label">position</label>
-  <input type="text" formControlName="position"  id="position"  class="form-control"  aria-describedby="emailHelp">
-</div>
-
-
-        </div>
-        <div class="modal-footer">
-          <button  type="submit" class="btn btn-outline-success" id="button-addon2">
-                     Add Employee
-          </button>
+              <input
+                formControlName="name"
+                id="name"
+                type="text"
+                class="form-control"
+                aria-describedby="emailHelp"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">email </label>
+              <input
+                type="email"
+                formControlName="email"
+                id="email"
+                class="form-control"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">gender </label>
+              <select
+                class="form-select"
+                formControlName="gender"
+                id="gender"
+                aria-label="Default select example"
+              >
+                <option selected>Open this select menu</option>
+                <option value="true">male</option>
+                <option value="false">female</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">mobile</label>
+              <input
+                type="text"
+                formControlName="mobile"
+                id="mobile"
+                class="form-control"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">address</label>
+              <input
+                type="text"
+                formControlName="address"
+                id="address"
+                class="form-control"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">company</label>
+              <input
+                type="text"
+                formControlName="company"
+                id="company"
+                class="form-control"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >position</label
+              >
+              <input
+                type="text"
+                formControlName="position"
+                id="position"
+                class="form-control"
+                aria-describedby="emailHelp"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="submit"
+              class="btn btn-outline-success"
+              id="button-addon2"
+            >
+              Add Employee
+            </button>
+          </div>
         </div>
       </div>
     </div>
+  </form>
+
+  <div class="mt-4 mb-3">
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+      type="button"
+      class="btn btn-outline-success"
+    >
+      <span
+        class="iconify"
+        data-icon="carbon:add-filled"
+        style="color: green"
+      ></span>
+      Add Employee
+    </button>
   </div>
-</form>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">name</th>
+          <th scope="col">email</th>
+          <th scope="col">gender</th>
+          <th scope="col">mobile</th>
+          <th scope="col">address</th>
+          <th scope="col">company</th>
+          <th scope="col">position</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees; index as i">
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ employee.gender ? "Male" : "Female" }}</td>
+          <td>{{ employee.mobile }}</td>
+          <td>{{ employee.address }}</td>
+          <td>{{ employee.company }}</td>
+          <td>{{ employee.position }}</td>
 
-<div class="mt-4 mb-3">
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" class="btn btn-outline-success"> 
-  <span class="iconify" data-icon="carbon:add-filled" style="color: green;"></span> Add Employee  
-</button>
+          <td>
+            <button
+              (click)="removeEmployee(employee.id)"
+              type="button"
+              class="btn btn-outline-warning"
+            >
+              <span
+                class="iconify"
+                data-icon="cil:pen"
+                style="color: #f6be00"
+              ></span>
+            </button>
+          </td>
+          <td>
+            <button
+              (click)="removeEmployee(employee.id)"
+              type="button"
+              class="btn btn-outline-danger"
+            >
+              <span
+                class="iconify"
+                data-icon="ant-design:delete-outlined"
+                style="color: red"
+              >
+              </span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-<div class="table-responsive">
-  <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">name</th>
-      <th scope="col">email</th>
-      <th scope="col">gender</th>
-      <th scope="col">mobile</th>
-      <th scope="col">address</th>
-      <th scope="col">company</th>
-      <th scope="col">position</th>
-      <th scope="col">Edit</th>
-      <th scope="col">Remove</th>
-   
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let employee of employees; index as i">
-      <td>{{employee.id}}</td>
-      <td>{{employee.name}}</td>
-      <td>{{employee.email}}</td>
-      <td>{{employee.gender ? 'Male' : 'Female' }} </td>
-      <td>{{employee.mobile}}</td>
-      <td>{{employee.address}}</td>
-      <td>{{employee.company}}</td>
-      <td>{{employee.position}}</td>
-
-<td>
-    <button (click)="removeEmployee(employee.id)" type="button" class="btn btn-outline-warning"> 
-      <span class="iconify" data-icon="cil:pen" style="color: #F6BE00;"></span>
-    </button>
-
-  </td>
-    <td><button (click)="removeEmployee(employee.id)" type="button" class="btn btn-outline-danger"> 
-      <span   class="iconify" data-icon="ant-design:delete-outlined" style="color: red;"> </span>
-    </button>
-   </td>
-  </tr>
-
-  </tbody>
-</table>
-</div>
-
-
-</div>
-
-

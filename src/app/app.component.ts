@@ -1,10 +1,7 @@
-
-   
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { EmployeesService } from './employees.service';
-import {NgForm} from '@angular/forms';
-
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -14,8 +11,6 @@ import {NgForm} from '@angular/forms';
 export class AppComponent implements OnInit {
   title = 'Test / Abu Dhabi Ports';
   employees: any = [];
-  
-
 
   constructor(private employeesServices: EmployeesService) {}
 
@@ -27,9 +22,7 @@ export class AppComponent implements OnInit {
     address: new FormControl(''),
     company: new FormControl(''),
     position: new FormControl(''),
-
   });
-
 
   ngOnInit(): void {
     this.retrieveEmployees();
@@ -58,17 +51,17 @@ export class AppComponent implements OnInit {
       }
     );
   }
-  addEmployee(){
-    console.log(this.employeeForm.value)
+  addEmployee() {
+    console.log(this.employeeForm.value);
     const data = {
-       name: this.employeeForm.value.name,
-       email: this.employeeForm.value.email,
-       gender: this.employeeForm.value.gender,
-       mobile: this.employeeForm.value.mobile,
-         address: this.employeeForm.value.address,
-         company: this.employeeForm.value.company,
-         position:this.employeeForm.value.position,
-         }
+      name: this.employeeForm.value.name,
+      email: this.employeeForm.value.email,
+      gender: this.employeeForm.value.gender,
+      mobile: this.employeeForm.value.mobile,
+      address: this.employeeForm.value.address,
+      company: this.employeeForm.value.company,
+      position: this.employeeForm.value.position,
+    };
 
     this.employeesServices.addEmployee(data).subscribe(
       (data) => {
@@ -78,6 +71,7 @@ export class AppComponent implements OnInit {
       },
       (error) => {
         console.log(error);
-      })
-    }
+      }
+    );
+  }
 }
